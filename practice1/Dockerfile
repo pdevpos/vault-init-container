@@ -4,5 +4,6 @@ RUN dnf install unzip -y
 RUN unzip /tmp/vault.zip
 RUN mv vault /bin
 RUN rm -rf /tmp/vault.zip
+RUN mkdir /data
 COPY run.sh /
 ENTRYPOINT ["bash","/run.sh"]
