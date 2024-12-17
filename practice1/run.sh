@@ -1,6 +1,6 @@
-#mkdir /test
-vault kv get $SECRET_NAME |  sed -n '/= Data =/,$ p' | grep -Ev '= Data =|^Key|^--' | awk '{ print "export "$1"=\""$2"\""}' >/test
-#rm -rf /test
+mkdir /test
+vault kv get $SECRET_NAME |  sed -n '/= Data =/,$ p' | grep -Ev '= Data =|^Key|^--' | awk '{ print "export "$1"=\""$2"\""}' >/test/secrets.txt
+
 
 
 
